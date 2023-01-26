@@ -19,7 +19,7 @@ public class Consumer {
 
     @KafkaListener(topics = "${spring.kafka.consumer.topic1.name}", groupId = "test")
     public void consume(ConsumerRecord<String, String> payload) {
-        log.info("Evento recebido");
+        log.info("Evento recebido com sucesso");
 
         producer.send(topic, payload.value());
     }
