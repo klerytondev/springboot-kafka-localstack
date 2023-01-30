@@ -14,13 +14,15 @@ public class Consumer {
 
     @Value("${spring.kafka.producer.topic2.name}")
     private String topic;
-
-    private final Producer producer;
+    private final Producer topic2producer;
 
     @KafkaListener(topics = "${spring.kafka.consumer.topic1.name}", groupId = "test")
     public void consume(ConsumerRecord<String, String> payload) {
-        log.info("Evento recebido com sucesso");
-
-        producer.send(topic, payload.value());
+        log.info("Evento consumido com sucesso do topic1");
+        topic2producer.send(topic, payload.value());
+    }
+    @KafkaListener(topics = "${spring.kafka.consumer.topic2.name}", groupId = "test")
+    public void consume2(ConsumerRecord<String, String> payload) {
+        log.info("Evento consumido com sucesso do topic2");
     }
 }
