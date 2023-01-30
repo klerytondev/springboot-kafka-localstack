@@ -22,6 +22,6 @@ public class KafkaController {
 
         topicProducer.send(topic, "Mensagem de teste enviada ao tópico: " + uuid);
 
-        return uuid;
+        return "Mensagem de teste enviada ao tópico: " + uuid;
     }
 }
