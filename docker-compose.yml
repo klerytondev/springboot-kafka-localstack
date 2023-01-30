@@ -30,7 +30,6 @@ services:
       # Keep in sync with tests/integration/conftest.py::configure_and_start_kafka
       KAFKA_BROKER_ID: 1
       KAFKA_BROKER_RACK: "local"
-      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
       KAFKA_DEFAULT_REPLICATION_FACTOR: 1
       KAFKA_DELETE_TOPIC_ENABLE: "true"
       KAFKA_INTER_BROKER_LISTENER_NAME: "PLAINTEXT"
